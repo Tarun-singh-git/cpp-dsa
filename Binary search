@@ -1,0 +1,45 @@
+// code by Tarun 
+//time complexity of binary search is O(log n)
+//array should be already sorted in  binary search
+#include<iostream>
+using namespace std;
+int binarySearch(int arr[],int size,int key){
+	int start=0;
+	int end=size-1;
+	// mid=(start+end)/2 can also be written but it will go out of range if array will be 2^31
+	int    mid = start + (end-start)/2;
+	while(start<=end){
+		//return the element index
+		if (arr[mid]==key){
+			return mid;
+		}
+		//go to the right part if element is greater than arr(mid)
+		if(key>arr[mid]){
+			start=mid+1;
+		}
+		//go to the left part if element is smaller than arr(mid) 
+		else{
+		 end=mid-1;
+		}
+		
+		mid=start + (end-start)/2;
+	}
+	// if element not found on array
+	return -1;
+}
+int main(){
+	int a[100],n,key;
+	cout<<"enter size of array and key you want to find:"<<endl;
+	// n represents the size of array
+	cin>>n>>key;
+	//give array input it is already sorted
+	cout<<"enter array element: "<<endl;
+	for(int i=0;i<n;i++){
+		
+		cin>>a[i];
+	}
+	int index=binarySearch(a,n,key);
+	
+	// if function returned -1 hence element is not found
+    cout<<"the position of index is:"<<index<<endl;
+}

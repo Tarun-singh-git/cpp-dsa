@@ -1,3 +1,5 @@
+//Code by tarun
+//time complexity of linear search is O(n)
 #include<iostream>
 using namespace std;
 int main(){

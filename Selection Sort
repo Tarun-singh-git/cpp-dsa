@@ -1,3 +1,7 @@
+// code by Tarun 
+//Time Complexity of Selection Sort is O(n^2)
+//Pck the smallest number and place in the right place
+//used in where array is small
 #include<iostream>
 using namespace std;
 int select(int arr[],int n){

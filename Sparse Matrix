@@ -1,0 +1,44 @@
+//code by tarun
+//a matrix in which no of 0's elementare more than non zero's element
+//to create sparse matrix we need position say row and column and value of non zero element
+#include<iostream>
+using namespace std;
+int main(){
+	int a[10][10],n=0,r,c,k=0;
+	cout<<"Enter the no of rows in matrix: ";
+	cin>>r;
+	cout<<"Enter the no of column in matrix: ";
+	cin>>c;
+	for(int i=0;i<r;i++){
+		for(int j=0;j<c;j++){
+			cin>>a[i][j];
+		}
+		}
+	
+	for(int i=0;i<r;i++){
+		for(int j=0;j<c;j++){
+		if(a[i][j]!=0){
+			n++;
+		}
+		}
+		}
+		int smat[3][n];
+		
+	for(int i=0;i<r;i++){
+		for(int j=0;j<c;j++){
+		if(a[i][j]!=0){
+			smat[0][k]=i; //row
+			smat[1][k]=j; //col.
+			smat[2][k]=a[i][j]; //value of non zero element
+			k++;
+		}
+		}
+		}
+		cout<<"the sparse matrix is:"<<endl;
+		for(int i=0;i<3;i++){
+			for(int j=0;j<n;j++){
+				cout<<smat[i][j]<<" ";
+			}
+			cout<<endl;
+		}
+}
